@@ -3,6 +3,8 @@ import java.sql.Struct;
 import java.util.*;
 
 public class FinalTask {
+    private static Vector<Object> ArrayUtils;
+
     public static void main(String[] args) {
         int[] storage = new int[2];
         Scanner sc = new Scanner(System.in);
@@ -18,15 +20,21 @@ public class FinalTask {
             String action = sc.nextLine();
             switch (action) {
                 case ("1"):
-                    Scanner numbScan = new Scanner(System.in);
-                    System.out.println("insert a number");
-                    int num = sc.nextInt();
-
-                    storage[toggle] = num;
-                    toggle+=1;
+                    if (toggle != 2) {
+                        Scanner numbScan = new Scanner(System.in);
+                        System.out.println("insert a number");
+                        int num = sc.nextInt();
+                        storage[toggle] = num;
+                        toggle += 1;
+                        System.out.println("number added");
+                    } else {
+                        System.out.println("Storage is full! If you want to add a number delete previous one!");
+                    }
                     break;
                 case ("2"):
-
+                    toggle -= 1;
+                    storage[toggle] = 0;
+                    System.out.println("number deleted");
                     break;
                 case ("3"):
                     System.out.println(Arrays.toString(storage));
