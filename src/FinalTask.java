@@ -9,7 +9,6 @@ public class FinalTask {
         int[] storage = new int[2];
         Scanner sc = new Scanner(System.in);
         System.out.println("what do you want to do?");
-
         System.out.println("1-add number");
         System.out.println("2-delete number");
         System.out.println("3-check number list");
@@ -24,17 +23,41 @@ public class FinalTask {
                         Scanner numbScan = new Scanner(System.in);
                         System.out.println("insert a number");
                         int num = sc.nextInt();
-                        storage[toggle] = num;
-                        toggle += 1;
-                        System.out.println("number added");
+                        if (num != storage[0]) {
+                            storage[toggle] = num;
+                            toggle += 1;
+                            System.out.println("number added");
+                        } else {
+                            System.out.println("Numbers should be different");
+                        }
+
                     } else {
                         System.out.println("Storage is full! If you want to add a number delete previous one!");
                     }
                     break;
                 case ("2"):
-                    toggle -= 1;
-                    storage[toggle] = 0;
-                    System.out.println("number deleted");
+                    Scanner delete = new Scanner(System.in);
+                    System.out.println("select the number you want to delete");
+                    System.out.println(Arrays.toString(storage));
+                    int delete2 = sc.nextInt();
+                    if (delete2 == storage[0]) {
+                        storage[0] = 0;
+                        toggle -= 1;
+                        System.out.println("number deleted");
+                    } else if(delete2 == storage[1]) {
+                        storage[1] = 0;
+                        toggle -= 1;
+                        System.out.println("number deleted");
+                    }else{
+                        System.out.println("This number does not exist");
+                    }
+//                    if (toggle != 0) {
+//                        toggle -= 1;
+//                        storage[toggle] = 0;
+//                        System.out.println("number deleted");
+//                    }else {
+//                        System.out.println("Storage is empty");
+//                    }
                     break;
                 case ("3"):
                     System.out.println(Arrays.toString(storage));
