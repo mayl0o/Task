@@ -57,6 +57,7 @@ public class FinalTask {
 //                    }else {
 //                        System.out.println("Storage is empty");
 //                    }
+
                     break;
                 case ("3"):
                     System.out.println(Arrays.toString(storage));
