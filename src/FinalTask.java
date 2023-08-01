@@ -30,7 +30,6 @@ public class FinalTask {
                         } else {
                             System.out.println("Numbers should be different");
                         }
-
                     } else {
                         System.out.println("Storage is full! If you want to add a number delete previous one!");
                     }
@@ -42,7 +41,7 @@ public class FinalTask {
                     int delete2 = sc.nextInt();
                     if (delete2 == storage[0]) {
                         storage[0] = 0;
-                        toggle -= 1;
+                        toggle -= 2;
                         System.out.println("number deleted");
                     } else if(delete2 == storage[1]) {
                         storage[1] = 0;
