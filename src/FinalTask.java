@@ -3,8 +3,6 @@ import java.sql.Struct;
 import java.util.*;
 
 public class FinalTask {
-    private static Vector<Object> ArrayUtils;
-
     public static void main(String[] args) {
         int[] storage = new int[2];
         Scanner sc = new Scanner(System.in);
